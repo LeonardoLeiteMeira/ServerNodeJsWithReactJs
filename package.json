@@ -1,0 +1,26 @@
+{
+	"name": "crivo_sistema_atendimento",
+	"version": "0.0.1",
+	"description": "Sistema para receber os dados dos clientes",
+	"main": "index.js",
+	"author": "Commit Jr",
+	"license": "MIT",
+	"scripts": {
+		"start": "yarn install && cd client && yarn install && yarn build && cd .. && node index.js",
+		"dev": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
+		"client": "cd client && yarn start",
+		"install-dependencies": "yarn install && cd client && yarn install",
+		"server": "nodemon index.js"
+	},
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"knex": "^0.21.1",
+		"mysql2": "^2.1.0"
+	},
+	"devDependencies": {
+		"concurrently": "^5.2.0",
+		"nodemon": "^2.0.4"
+	}
+}
